@@ -1,0 +1,38 @@
+{
+  "name": "miniature-engine",
+  "version": "0.1.0",
+  "description": "A discord bot made by a group of friends to assist them in their coding.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.ts"
+  },
+  "author": "elektron-blip",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.2",
+    "eslint": "^7.28.0",
+    "typescript": "^4.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elektron-blip/miniature-engine.git"
+  },
+  "keywords": [
+    "bot",
+    "node",
+    "typescript",
+    "discord",
+    "discordapp",
+    "discordjs",
+    "discord-bot",
+    "discord-js"
+  ],
+  "bugs": {
+    "url": "https://github.com/Elektron-blip/miniature-engine/issues"
+  },
+  "homepage": "https://github.com/Elektron-blip/miniature-engine#readme"
+}
