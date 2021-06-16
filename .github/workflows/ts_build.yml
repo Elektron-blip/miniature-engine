@@ -15,4 +15,5 @@ jobs:
       uses: alexthemaster/action-build-typescript@v1.2.1
       with:
         pushToBranch: "${{ github.ref }}-javascript"
+        branch: ${{ github.ref }}
       
