@@ -3,7 +3,7 @@ const fs = require('fs')
 
 const client = new Discord.Client();
 
-fs.readdir('./events/', (err, files) => {
+fs.readdir('./src//events/', (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
       if (!file.endsWith('.ts')) return;
@@ -15,7 +15,7 @@ fs.readdir('./events/', (err, files) => {
 
 client.commands = new Discord.Collection();
 
-fs.readdir('./commands/', (err, files) => {
+fs.readdir('./src/commands/', (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
     if (!file.endsWith('.ts')) return;
