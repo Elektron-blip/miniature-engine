@@ -1,6 +1,10 @@
 name: TypeScript Build
 
-on: [push, workflow_dispatch]
+on: 
+  push:
+    branches:
+    - main
+  workflow_dispatch:
 
 permissions: write-all
 
@@ -13,12 +17,18 @@ jobs:
       uses: actions/checkout@v2
     - name: Setup Node.js
       uses: actions/setup-node@v2.1.5
-    - name: Install packages
-      run: npm i
-    - name: Build and push
-      uses: alexthemaster/action-build-typescript@v1.2.1 
       with:
-        pushToBranch: true 
-        branch: 'main-javascript'
-        githubToken: ${{ secrets.GITHUB_TOKEN }} 
+        node-version: 16
+    - name: Install packages
+      run: |
+        npm i -D typescript
+        npm i -D @types/node
+        npm i
+    - name: TypeScript Build
+      uses: alexthemaster/action-build-typescript@v1.2.1
+      with:
+        pushToBranch: true
+        branch: "main-javascript"
+        githubToken: "${{ github.token }}"
+        
       
