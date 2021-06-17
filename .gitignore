@@ -105,6 +105,5 @@ dist
 
 # Others
 *.js
-**package-lock.json
 **.vscode
 **.DS_Store
