@@ -9,13 +9,16 @@ jobs:
     name: Build TypeScript
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout project
+      uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v2.1.4
       with:
-        persist-credentials: true
-        fetch-depth: 0
-    - name: TypeScript Build
-      uses: alexthemaster/action-build-typescript@v1.2.1
+        node-version: 12
+    - name: Build and push
+      uses: alexthemaster/action-build-typescript@v1.2.1. 
       with:
-        pushToBranch: "${{ github.ref }}-javascript"
-        branch: ${{ github.ref }}
+        pushToBranch: true 
+        branch: 'main-javascript'
+        githubToken: ${{ secrets.GITHUB_TOKEN }} 
       
