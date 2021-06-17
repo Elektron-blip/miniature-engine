@@ -1,6 +1,10 @@
 name: TypeScript Build
 
-on: [push, workflow_dispatch]
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
 
 permissions: write-all
 
@@ -18,11 +22,17 @@ jobs:
     - name: Install packages
       run: |
         npm i -D typescript
-        npm i -D @types/node        
-    - name: Build and push
-      uses: alexthemaster/action-build-typescript@v1.2.1 
+        npm i -D @types/node
+        npm i
+    - name: TypeScript Build
+      uses: alexthemaster/action-build-typescript@v1.2.1
       with:
-        pushToBranch: true 
-        branch: 'main-javascript'
-        githubToken: ${{ secrets.GITHUB_TOKEN }} 
+        pushToBranch: true
+        branch: main-javascript
+        githubToken: ${{ github.token }}
+        # The name of the branch the action should push the compiled code
+        branch: # optional, default is dist
+        # Your GitHub secret token
+        githubToken: # optional
+        
       
