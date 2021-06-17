@@ -2,7 +2,7 @@ name: TypeScript Build
 
 on: [push, workflow_dispatch]
 
-permissions: read-all|write-all
+permissions: write-all
 
 jobs:
   compile:
